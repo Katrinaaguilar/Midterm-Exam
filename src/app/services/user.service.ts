@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-
+import {User} from '../models/User';
+import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class UserService {
   usersCollection: AngularFirestoreCollection<User>;
-
-  constructor(public afs: AngularFirestore) { }
-
-}
-interface User{
-  id?: string;
-  name?: string;
-  email?: string;
-  password?:string;
+  users:Observable<User[]>;
+  constructor(public afs: AngularFirestore) {
+    this.users = this.afs.collection('users').valueChanges();
+   }
+    
 }
