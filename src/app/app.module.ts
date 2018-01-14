@@ -13,7 +13,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, AngularFireModule.initializeApp(environment.firebase, 'angularfs'), 
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
