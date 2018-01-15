@@ -1,7 +1,8 @@
 <div *ngIf="users?.length > 0; else noUsers">
   <ul *ngFor= "let user of users" class="collection">
-    <li class = "collection-user">{{user.name}}
-    </li>
+    <li class = "collection-user"><strong>{{user.name}};</strong> </li>
+    <li class= "collection-user"><strong>{{user.email}};</strong></li> 
+    <li class= "collection-user"><strong>{{user.password}};</strong></li>
   </ul>
 </div>
 
